@@ -19,7 +19,8 @@ def Readibility_Grade():
     Returns: 
       float
     """
-    Essay_Response = request.form['Student_Response']
+    data = request.get_json()
+    Essay_Response = data['Student_Response']
     word_Count = getWord_Count(Essay_Response)
     difficult_Words = getDifficult_Words(Essay_Response)
     NOT_DIFFICULT_WORDS = word_Count - difficult_Words

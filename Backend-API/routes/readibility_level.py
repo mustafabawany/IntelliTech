@@ -19,7 +19,8 @@ def Readibility_Level():
     Returns: 
         float
     """
-    Essay_Response = request.form['Student_Response']
+    data = request.get_json()
+    Essay_Response = data['Student_Response']
     word_count = len(word_tokenize(Essay_Response))
     sent_count = len(sent_tokenize(Essay_Response))
     Flesch_Reading_Ease = 206.835-1.015*(word_count/float(sent_count))-84.6*(get_SyllableCount(Essay_Response) / float(word_count))

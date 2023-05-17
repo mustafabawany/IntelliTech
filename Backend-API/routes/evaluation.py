@@ -17,7 +17,8 @@ evaluation_bp = Blueprint('evaluation' , __name__)
 @evaluation_bp.route("/", methods=["POST"])
 def getResult():
     lstm_model, Word2VecModel = Load_Model()
-    Essay_Response = request.form['Student_Response']
+    data = request.get_json()
+    Essay_Response = data['Student_Response']
     Essay_Reponse_Sentences = []
     Essay_Reponse_Sentences.append(Essay_To_WordList(Essay_Response))
     Essay_Response_Vectors = np.array(getAvgFeatureVecs(Essay_Reponse_Sentences, Word2VecModel, NumOfFeatures)) 

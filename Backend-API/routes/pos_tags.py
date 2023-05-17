@@ -15,7 +15,8 @@ def POS_Tag_Count():
     Returns: 
       int,int,int,int,int,int    
     """
-    Essay_Response = request.form['Student_Response']
+    data = request.get_json()
+    Essay_Response = data['Student_Response']
     tagged_doc = nlp(Essay_Response)
 
     adj_count=0

@@ -14,6 +14,7 @@ def getWord_Count():
     Returns: 
       int
     """
-    Essay_Response = request.form['Student_Response']
+    data = request.get_json()
+    Essay_Response = data['Student_Response']
     sentence_no = word_tokenize(Essay_Response)
     return jsonify({'score': str(len(sentence_no))})

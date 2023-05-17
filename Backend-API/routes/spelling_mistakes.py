@@ -19,7 +19,8 @@ def getSpelling_Mistakes():
         Returns: 
         int
     """
-    Essay_Response = request.form['Student_Response']
+    data = request.get_json()
+    Essay_Response = data['Student_Response']
     count = 0
     Sentence = word_tokenize(Essay_Response)
     for word in Sentence:

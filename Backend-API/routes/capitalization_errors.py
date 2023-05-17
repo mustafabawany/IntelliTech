@@ -14,7 +14,8 @@ def Capitalization_Errors():
 
     """
     count = 0
-    Essay_Response = request.form['Student_Response']
+    data = request.get_json()
+    Essay_Response = data['Student_Response']
     words = Essay_Response.split()
     alreadyCounted_Words = []
     

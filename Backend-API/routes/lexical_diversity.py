@@ -19,7 +19,8 @@ def Lexical_Diversity():
     Returns: 
       float
   """
-  Essay_Response = request.form['Student_Response']
+  data = request.get_json()
+  Essay_Response = data['Student_Response']
   lexicalDiversity = Unique_Words_Per_Essay(Essay_Response)/len(word_tokenize(Essay_Response))
   return jsonify({'Lexical_Diversity': lexicalDiversity})
 
