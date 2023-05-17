@@ -3,8 +3,8 @@ from nltk.tokenize import word_tokenize
 from nltk.corpus import wordnet
 from flask import Flask, request, jsonify, Blueprint
 from textblob import Word
-# nltk.download('wordnet')
-# nltk.download('punkt')
+nltk.download('wordnet')
+nltk.download('punkt')
 
 spellingMistakes_bp = Blueprint('spelling_mistakes' , __name__)
 

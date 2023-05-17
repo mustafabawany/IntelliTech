@@ -6,7 +6,7 @@ import collections
 import nltk
 from nltk.corpus import stopwords
 from tensorflow.keras.models import load_model
-# nltk.download('stopwords')
+nltk.download('stopwords')
 
 
 NumOfFeatures = 400
